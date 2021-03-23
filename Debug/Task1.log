@@ -1,0 +1,6 @@
+﻿  Task1.cpp
+D:\Visual Studi Projects\Task1\Task1\Task1.cpp(93,27): warning C4018: '>': signed/unsigned mismatch
+D:\Visual Studi Projects\Task1\Task1\Task1.cpp(122,24): warning C4018: '<': signed/unsigned mismatch
+D:\Visual Studi Projects\Task1\Task1\Task1.cpp(129,24): warning C4018: '<': signed/unsigned mismatch
+D:\Visual Studi Projects\Task1\Task1\Task1.cpp(159,22): warning C4018: '<': signed/unsigned mismatch
+  Task1.vcxproj -> D:\Visual Studi Projects\Task1\Debug\Task1.exe
