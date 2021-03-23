@@ -13,7 +13,7 @@ class String
 	{
 		this->capacity *= 2;
 		char* biggerString = new char[this->capacity];
-		strcpy_s(biggerString, strlen(this->string) + 1, this->string);
+		strcpy_s(biggerString, size, this->string);
 		delete[] string;
 		this->string = biggerString;
 	}
@@ -30,7 +30,7 @@ public:
 		this->string = new char[other.capacity];
 		this->size = other.size;
 		this->capacity = other.capacity;
-		strcpy_s(string, strlen(other.string) + 1, other.string);
+		strcpy_s(string, other.size, other.string);
 	}
 	String& operator=(const String& other)
 	{
@@ -84,7 +84,7 @@ public:
 	}
 	size_t getLenght()
 	{
-		return strlen(this->string);
+		return this->size;
 	}
 	void insertAt(int index, char elem)
 	{
@@ -145,7 +145,7 @@ public:
 		}
 		return *this;
 	}
-	String& operator+(const String& other)
+	String operator+(const String& other)
 	{
 		String temp1;
 		temp1 += other;
@@ -182,7 +182,5 @@ int main()
 	String s1,s2,s3;
 	s1.setString("Hello ");
 	s2.setString("World");
-	s2.add('!');
-	s2.print();
 	std::cout << s1[2];
 }
