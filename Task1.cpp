@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "Class.h"
+#include "String.h"
 
 int main()
 {
