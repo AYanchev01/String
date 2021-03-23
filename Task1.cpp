@@ -13,7 +13,7 @@ class String
 	{
 		this->capacity *= 2;
 		char* biggerString = new char[this->capacity];
-		strcpy_s(biggerString, size, this->string);
+		strcpy_s(biggerString, size+1, this->string);
 		delete[] string;
 		this->string = biggerString;
 	}
@@ -30,7 +30,11 @@ public:
 		this->string = new char[other.capacity];
 		this->size = other.size;
 		this->capacity = other.capacity;
-		strcpy_s(string, other.size, other.string);
+		strcpy_s(string, other.size + 1, other.string);
+	}
+	String(const String& other)
+	{
+		this->copy(other);
 	}
 	String& operator=(const String& other)
 	{
@@ -49,8 +53,9 @@ public:
 	{
 		this->erase();
 		size = strlen(string);
-		this->string = new char[size + 1];
-		strcpy_s(this->string, size + 1, string);
+		capacity = size * 2;
+		this->string = new char[capacity];
+		strcpy_s(this->string, size+1, string);
 	}
 	const char* getString() const
 	{
@@ -71,8 +76,7 @@ public:
 			this->resize();
 		}
 		this->string[size++] = newChar;
-		this->string[size++] = '\0';
-		
+		this->string[size] = '\0';
 	}
 	void print()
 	{
@@ -133,23 +137,16 @@ public:
 	}
 	String& operator+=(const String& other)
 	{
-		int temp = this->size;
-		this->size += other.size;
-		while (size >= capacity)
-		{
-			this->resize();
-		}
-		for (size_t i = temp; i < size; i++)
-		{
-			string[i] = other.string[i-temp];
-		}
+		*this = *this + other;
 		return *this;
 	}
 	String operator+(const String& other)
 	{
-		String temp1;
-		temp1 += other;
-		temp1 += *this;
+		String temp1(*this);
+		for (int i = 0; i < other.size; i++)
+		{
+			temp1.add(other.string[i]);
+		}
 		return temp1;
 	}
 	bool operator==(const String& other) 
@@ -182,5 +179,9 @@ int main()
 	String s1,s2,s3;
 	s1.setString("Hello ");
 	s2.setString("World");
-	std::cout << s1[2];
+	s3 = s1 + s2;
+	s1 += s2;
+	s1.add('!');
+	s1.print();
+	s3.print();
 }
