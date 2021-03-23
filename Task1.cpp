@@ -181,7 +181,6 @@ int main()
 	s2.setString("World");
 	s3 = s1 + s2;
 	s1 += s2;
-	s1.add('!');
 	s1.print();
 	s3.print();
 }
