@@ -171,6 +171,10 @@ public:
 	{
 		return !(*this == other);
 	}
+	char operator[](int index)
+	{
+		return this->string[index];
+	}
 }; 
 
 int main()
@@ -180,4 +184,5 @@ int main()
 	s2.setString("World");
 	s2.add('!');
 	s2.print();
+	std::cout << s1[2];
 }
