@@ -13,14 +13,12 @@ public:
 	void copy(const String& other);
 	String(const String& other);
 	String& operator=(const String& other);
+	String& operator=(const char* other);
 	~String();
 	void setString(const char* string);
-	const char* getString() const;
-	const size_t getCapacity() const;
-	const size_t getSize() const;
 	void add(char newChar);
-	void print();
-	size_t getLenght();
+	void print() const;
+	size_t getLenght() const;
 	void insertAt(int index, char elem);
 	void removeAt(int index);
 	void trimStart();
@@ -29,9 +27,9 @@ public:
 	void trimEnd9000(int number);
 	String& operator+=(const String& other);
 	String operator+(const String& other);
-	bool operator==(const String& other);
-	bool operator!=(const String& other);
-	char operator[](int index);
+	bool operator==(const String& other) const;
+	bool operator!=(const String& other) const;
+	char& operator[](int index) const;
 };
 
 

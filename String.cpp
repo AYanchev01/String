@@ -22,7 +22,7 @@
 	}
 	void String::copy(const String& other)
 	{
-		this->string = new char[other.capacity];
+		this->string = new char[other.capacity+1];
 		this->size = other.size;
 		this->capacity = other.capacity;
 		strcpy_s(string, other.size + 1, other.string);
@@ -40,6 +40,14 @@
 		}
 		return *this;
 	}
+	String& String::operator=(const char* other)
+	{
+		this->size = strlen(other);
+		this->capacity = strlen(other) * 2;
+		this->string = new char[capacity];
+		strcpy_s(string, strlen(other) + 1, other);
+		return *this;
+	}
 	String::~String()
 	{
 		this->erase();
@@ -52,18 +60,6 @@
 		this->string = new char[capacity];
 		strcpy_s(this->string, size + 1, string);
 	}
-	const char* String::getString() const
-	{
-		return this->string;
-	}
-	const size_t String::getCapacity() const
-	{
-		return this->capacity;
-	}
-	const size_t String::getSize() const
-	{
-		return this->size;
-	}
 	void String::add(char newChar)
 	{
 		if (size >= capacity)
@@ -73,7 +69,7 @@
 		this->string[size++] = newChar;
 		this->string[size] = '\0';
 	}
-	void String::print()
+	void String::print() const
 	{
 		for (size_t i = 0; i < size; i++)
 		{
@@ -81,7 +77,7 @@
 		}
 		std::cout << std::endl;
 	}
-	size_t String::getLenght()
+	size_t String::getLenght() const
 	{
 		return this->size;
 	}
@@ -144,7 +140,7 @@
 		}
 		return temp1;
 	}
-	bool String::operator==(const String& other)
+	bool String::operator==(const String& other) const
 	{
 		if (size == other.size)
 		{
@@ -159,11 +155,11 @@
 		}
 		return false;
 	}
-	bool String::operator!=(const String& other)
+	bool String::operator!=(const String& other) const
 	{
 		return !(*this == other);
 	}
-	char String::operator[](int index)
+	char& String::operator[](int index) const
 	{
 		return this->string[index];
 	}
