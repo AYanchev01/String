@@ -42,6 +42,7 @@
 	}
 	String& String::operator=(const char* other)
 	{
+		this->erase();
 		this->size = strlen(other);
 		this->capacity = strlen(other) * 2;
 		this->string = new char[capacity];
