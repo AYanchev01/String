@@ -12,6 +12,7 @@ public:
 	String();
 	void copy(const String& other);
 	String(const String& other);
+	String(const char* other);
 	String& operator=(const String& other);
 	String& operator=(const char* other);
 	~String();

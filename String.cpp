@@ -31,6 +31,13 @@
 	{
 		this->copy(other);
 	}
+	String::String(const char* other)
+	{
+		this->size = strlen(other);
+		this->capacity = strlen(other) * 2;
+		this->string = new char[capacity];
+		strcpy_s(string, strlen(other) + 1, other);
+	}
 	String& String::operator=(const String& other)
 	{
 		if (this != &other)
