@@ -29,6 +29,7 @@ public:
 	String& operator+=(const String& other);
 	String operator+(const String& other);
 	bool operator==(const String& other) const;
+	bool operator==(const char* other) const;
 	bool operator!=(const String& other) const;
 	char& operator[](int index) const;
 };

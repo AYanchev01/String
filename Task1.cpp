@@ -6,7 +6,7 @@ int main()
 {
 	String s1, s2, s3;
 	s1.setString("Hello ");
-	s2.setString("World");
+	s2 = "world";
 	s3 = s1 + s2;
 	s1 += s2;
 	s1.print();

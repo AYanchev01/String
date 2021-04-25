@@ -163,6 +163,21 @@
 		}
 		return false;
 	}
+	bool String::operator==(const char* other) const
+	{
+		if (size == strlen(other))
+		{
+			for (int i = 0; i < size; i++)
+			{
+				if (string[i] != other[i])
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
 	bool String::operator!=(const String& other) const
 	{
 		return !(*this == other);
