@@ -182,6 +182,10 @@
 	{
 		return !(*this == other);
 	}
+	bool String::operator!=(const char* other) const
+	{
+		return !(*this == other);
+	}
 	char& String::operator[](int index) const
 	{
 		return this->string[index];
