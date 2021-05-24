@@ -1,2 +1,10 @@
-﻿  Task1.cpp
+﻿  String.cpp
+D:\Visual Studi Projects\Task1\Task1\String.cpp(96,26): warning C4018: '>': signed/unsigned mismatch
+D:\Visual Studi Projects\Task1\Task1\String.cpp(125,23): warning C4018: '<': signed/unsigned mismatch
+D:\Visual Studi Projects\Task1\Task1\String.cpp(132,23): warning C4018: '<': signed/unsigned mismatch
+D:\Visual Studi Projects\Task1\Task1\String.cpp(145,20): warning C4018: '<': signed/unsigned mismatch
+D:\Visual Studi Projects\Task1\Task1\String.cpp(155,21): warning C4018: '<': signed/unsigned mismatch
+D:\Visual Studi Projects\Task1\Task1\String.cpp(170,21): warning C4018: '<': signed/unsigned mismatch
+  Task1.cpp
+  Generating Code...
   Task1.vcxproj -> D:\Visual Studi Projects\Task1\Debug\Task1.exe

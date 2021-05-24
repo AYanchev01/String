@@ -190,3 +190,21 @@ char& String::operator[](int index) const
 {
 	return this->string[index];
 }
+
+std::ostream& operator<<(std::ostream& out, const String& string)
+{
+	out << string.string;
+	return out;
+}
+
+std::istream& operator>>(std::istream& in, String& string)
+{
+	char c;
+	do
+	{
+		c = in.get();
+		string.add(c);
+	} while (c != '\n');
+
+	return in;
+}

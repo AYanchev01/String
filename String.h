@@ -33,6 +33,9 @@ public:
 	bool operator!=(const String& other) const;
 	bool operator!=(const char* other) const;
 	char& operator[](int index) const;
+	friend std::ostream& operator<<(std::ostream& out, const String& string);
+	friend std::istream& operator>>(std::istream& in,String& string);
+
 };
 
 
