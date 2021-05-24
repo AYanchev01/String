@@ -13,4 +13,8 @@ int main()
 	s3.print();
 	s1.add('!');
 	s1.print();
+	/*String s1;
+	s1 = "hello world";
+	s1.add('a');
+	s1.print();*/
 }
